@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head><title>eFakture Plus</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="popupstyle.css">
+</head>
+<body>
+<div class="opt_title">eFakture Plus <span id="status">Opcije će automatski biti sačuvane</span></div>
+<div id="host_permission">
+<p>VAŽNO: morate dozvoliti dodatku da se koristi na sajtu eFakture</p>
+<p><label><input type="checkbox" id="checkbox_host_permission"> Dozvoli</label></p>
+</div>
+
+<div class="opt_body_holder">
+
+
+<div class="single_opt">
+	<label class="switch">
+	  <input type="checkbox" id="opt_bulk_odobri">
+	  <span class="slider"></span>
+	  
+	</label>
+	<span>
+	<img class="optIco" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAACXBIWXMAAB7BAAAewQHDaVRTAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAA8tJREFUWIXtmE9sFFUcxz+/mekWqFBPlhI0/guUBNdOmsbYxG2bSEKMiQe1Ri9GuaiEA8KlpaubVm0IEZNKxAge4GTSAxzURMXgblXU0O62aqJNDUQKKARsKdranXk/D92Wpcxsu2n3YvpNJvNm5n3f++T3fvPem4FlBUvyL+oTvfd6nmlTYbOAE2K5LKrH+9+IfQCiJYGpa//yPiNOP7Bmgd4D6c7GHSWBcduThxG2Ab+g2i0ifpDBiNaIyk5AfdvcNZhoHqlrS1Ubx7SqSnmxACr60UBH00nIHwohmnu4P9PZdCjI6LanngJOAxeAdZZnRYERY5tnUdkhQaZ5JCqbgDkwShkCqJWN7v6swllV3qJZ6+N0V+wyQG08uRt0n4CCnAMFJAJQ5nlHsk6kEtGiI2OpdWymHJikzsry7aqyF0eH3MTXzer7zwnsAxD0iEJTfv0fuh69ArxeLMgt/Qbd9Gz91PalFdiA76cF7sg9OtpvN25z/dRvcz118d6HjHqrwzqyxPqzr7Pxx0IwVtDNwUTzTxizBRglDyRtx14gIWZufTeefNFgvkOsL8IOAwO1e5INRcMApN9sPp0DGkLkYBgIgCK/AueBvwocw5SZC4VgQia2PCDYWKgOQKYz9g2wfr568+lGZET+ABB4oJChri1VTW7obJGLiwXI12xkRPW4CltBX3XjyWcU/g0yGHQtsAo4MzY6nllKmLx5SsWNp7qB7cxZswJ0BmNacsNYCphpRRMn1ztGXAMrggy22r+PjY5nht99LDByy/rf65acqd+TvNO3tTYsZyxfz127NpEuRc7cgEmoVWtS3aK8EgQ5R2cx5umSvU1uPPUS6MHc5YjCVIihCqgAzo6P/l0zE6HNbSeqVkbKK4rp3MtO+fcPXRnp6Wnx4ebl4Ilcd/vTnbFdYQ3UtaWqja3DwN2Vt6+uBb53X0s9iWqP55vi9leWw3BN1VHgechfDlTXAigUXOb73opdBC4B+KrVOc8kELhNXYD+mSkUXCgXqkxH7JOHd3675nq5H5j0YYropOnbu2VsSWEATr3TMAFMLKaNJYF5MNG7QXz/bcEKjYyiV7N22cs/JxqulhTG8v2tII9Pb9KDJYDjZT8EPi8pzIrrkUOTt3lTqFaGwoicH3AeOVGonfzvpuz02ZQtoP/I9EmnYDZf3l+Ar6DyIqMDIPWWsstt/8oJ/aKETcA6QI1jBhcLEAjj2HaX55sWRTYivBc2+rOzmuiBwUTzyFLC3DRjRtuT9zhIqxGNhv+F4JKKHst0NB5e6r8QywrTfyc0ddp3Fbp/AAAAAElFTkSuQmCC"> Odobri više faktura odjednom </span>
+	<p style="font-size: 17px;">
+	Ova opcija će dodati taster "Odobri sve označeno" na stranici "Ulazni dokumenti" pomoću kojeg korisnik može masovno odobriti/prihvatiti sve označene fakture jednim klikom. Skripta će odobriti/prihvatiti samo one fakture koje imaju status <strong>"Pregledano"</strong> i <strong>"Novo"</strong>, a ostale će zanemariti. Ukoliko je za neku fakturu potrebno dodati napomenu pre odobrenja, takvu je najbolje zasebno odobriti na klasičan način jer ova skripta ne podržava tu opciju.
+	</p>
+</div>
+
+<div class="single_opt">
+	<label class="switch">
+	  <input type="checkbox" id="opt_reminder">
+	  <span class="slider"></span>
+	  
+	</label>
+	<span>
+	<img class="optIco" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAACXBIWXMAAB7BAAAewQHDaVRTAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAABNZJREFUWIXVl1tslEUUx39nZndbsUDbCBQ1PhCFpFTQQEyEqN3uFnwBQ7SVB8RETYzhycQLIWzzhZuaGDW+aIwPhiYi9IVIgoK720VR8IImyiXy4BNWbrZcWkr322+OD91dlt5LVtD/y34z55w5v29mzux88B+STMa50eusivjZGhe24WsD2Gm5QC2Asc6/0FV94shHi/2SmDrgQsaLXh1pPKAy40XPjwmzzOtscM6tVmUJUA/UAuHR/K9Jt6c2x58FiCbS8w36iyq/i9N4alv8TMEr5iXnEkgamBZYMyfjRc+HRqCttjn9MAhc61iwo5GAOVVoiNNeDP0iNGAlHduQbEpti5/Jg3QCdwJ/+lfCAwxNtvS1g1MrIgPfidCQN37vlD2K/Caqp60EPS4w3QNa4WZX/tXX4bVmx6OLJZIPg3wJTAOOi3MvqjE78yBdWI2mvPjJYTCxRKodWANcUmFNelNszyRnZiJABZ3BalPKix8vdBRhGr3Oe23gTgKC6qrUlvjucoCUAK0BaS8mdu6R5Nbmg6U+pvBgA30GEIEj5QZp3rj/PpA3S/vUmI+Xb/h69ogwwBIART8vJ0jMS851YjPAXUCXCmuBS8C8nPWTsQ3JWSPA6ILBH34uF8gyb9/Mkqrpwmo0vSnWDvp4HqhejSQbvc7KIkxLyy4L3AFgQvbUKGNPWupH7mGEqkltjh8qAIkwD6guwlyaP206xVnyz5YL5qut0Z/Ussja3IMFkIJSm+OH1LEAqw9kvOjp0neQWFvqvXgi9W65QP73muxxX1bFEumt4O4OrH0+40VzZvyQf0ee5xnQ9SBrLcFcKCnt+Mb0y7FEcvXNgjl2rF4K+aVwBYHBg0lF3wHZPkh8a2QALDaSb4czPHZTYP6omVPME2AdQGiwEbjCXp7BuWEw8US6FfSpySZU9HIkF1n/xRuPnhtqm1lx1mSpAMBqcA3GYl2AA+AcM4bBKNoGzJ8sDAh+KHcA2D7UciFUbabQD4wxMwMXK4aVuzjzghpdITK40SYsJ3/39VV2jGSaai+bYDA9IXIlM+MH/YEZNEypvDIF8sh5JbdGDwOHJwUyjrJVkdvs4Orgh8L9kN/A2XCkp+AUVNiaciYdTZagtvA8ld5uyM9Mxov2xhKpLBAxvqsdGtjclo4F6JOiYy+TYA4kNzd9OhEY8W2tGgcwsMdbcaUIk1c3UIdl1tBAp/q+QP14/x6KPtfSsmtnR0drMC6N1VkogHYXukphTgB1RlkIXHcRdyqvGnFPjJtA+GFCIICqWwiCIsULeRFG4VuBqAorgC2lgZ1bmvYCeyeSZKISZKUCRiheyotnSsianYCiPBTdmF5ZzsRD1dSWWqWwCHBqdNcwmP1e9KgonwEY0fZ4W3r8ZblBEFE+AUBlR+l30/Wft757ScPmfhEaVHV3LJH6EZU9Yvg1UE4b63oCbHfuaigIVeb8jBftHZqs0eusyl0NhUOVOWsJal1gaqxQp+oWIqxAWQygylHjB+tKY4eVR/z1r6YTNh+osHokexnkUNkhfrAu+VbzxTFhCop5yXoC87SiSwUagBogMpr/GMoC3QrHUL6RkHaULs2EYEbSslf23Z6titSECIpQClUuMGFjnS9QXLYcNhvpzfbsf3t53w28wK3XP1v+8/y0Nde2AAAAAElFTkSuQmCC"> Potvrda o akciji </span>
+	<p style="font-size: 17px;">
+	Nakon što korisnik klikne taster "Odobri sve označeno", kao dodatna mera zaštite od slučajnog klika pojaviće se prozor za potvrdu. Ako korisnik ne želi da se dodatna potvrda pojavljuje, može je isključiti pomoću ove opcije.
+	</p>
+</div>
+
+<div class="single_opt">
+	<label class="switch">
+	  <input type="checkbox" id="opt_test_mod">
+	  <span class="slider"></span>
+	  
+	</label>
+	<span>
+	<img class="optIco" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAABNdJREFUWIXNmF1sVEUUx38z93aXNlooqPhgYk36gMqTAkr4SLfdVjGAPkBfAJUmFh6M0WCMhHaXbUFjkBijibEmloCaWDQmSCDQ/cIUEYLRmEqIgPqCgSiUj9B1t3vn+NB7d7ff343/l53MnDn7u2fOvTNnlIjwf5E9WQc1b0ZnqyK5z7azV4+EV92ajC81kcgs2vJjUdn8W5tEyRaExYACRMEZUK3dV0sPnP348d5phamLHPR1m3kviKjtIA+N4PYPQd6aZ13b3x5en5lSmLq6g1b3gns2COwsgOhR0Oqg9hWlei/2FhdVaCWbEV4CSjwoBTvLzv/zeXv7emfSMFVNibVaydvAIx4Eio/Iyp7o7uqrA+2DO2LzsfQbIFvzUJwzorbHWwKHJgRTHYk/phzeBQJuV0ZBa9bSuxPhyisjPgEQiCTvtx2zQ6AB8LndCYXZ1tEc/GlMMCu2d5b57d73ULIJ0IABvnAs3ZQIV/45GsQQUOWWY1qADfQlugH2O5Z+LRGuvDEsTCCSrLAdc1SgAkDghGX068d3VZ4dL8RA1TYmFxnL7EVY6XZdEGFVrKXq0iCYtZHDJalsyWlRLASuK6UaOiKBrycLMVDBptg6pVSrQJkSuortnicOhVf3QN8yAHDHKal3QUDJORHz11SD9PnmsoFzAKJYeMcpqfeG7LwNz+cmiFoOfB8MxY4BkWhz9anJMgRDsaVAGNRTqqBfw0bgQ3CXKRBJ2pZjbgOzFGqLIGuA1Tk2OKnFNHa0BJPjhahpTD4p2uwY6E8ZaUer94HU3PPX7m5vX+94yzQHmAWQtdSRaHPVGmX0UuAwgIJlonSiOhTvrGmKVo4VIhiKfyvanPJABE4qMYFYc9VyC+cb17T4esXcOeAuk+41/nz28C9Ax67KH4A1hU9WADVspHL2enBko4X2RaRxv8m28vlyMLbK+hw3fYpJ9dtLxgo1ZghXGXwZCwNA2uf4czDYPj9O30CK4iE3Ng9qQCJ6UOeVZkHeWo4BkdgIiZ++6U+X3JUCwMLJR4b+55rscA4A3Dfr6QFQCwohxvL2+Wene71lsrD6wRQC2KMB9YeKtwEvAvuizdWbR5vnKX3TX+RFxsHJgPfRy2bSnlExKd9Qk4eTchPe+x2r/LPTfq/tYOVhsmLn8iRF8bhgJiofmdz/+DNWOgdjinS6wG7WTMDQSy4yWcnkI3Pvr393AykA5ciDM8HiaKvcbabmXrx+IwfjHgm73I7amYARVC2Agl+8I6nOD7Lfbb1a0xR9eDpBqkKJRxW8AiAiB7z+HIydyraJ0AWUovTJYFNs3XSA1IQSdRrpBEpF6CqxU22DYI7tqb0DPAdcEChDqYPBcPxEbWNy0VRABEOxxcFQ/DtBvqRvY/5N2/Ksd7DqBwMQa6m65Fh6iRLaAIOw0mhzJhiKHwhEkuUTgQhEkuXBpsRnoE4DKwAD8qnKmCUd4erfC20HlbfuIbm+JhT9QNB76asONlqOqasJxcddHVjQgMpVB3Ft6W3Hw5U/DzVn2FrbLSeqCusmgZctx9QHw/FR6yYL2SpTVTcVaqSKUuABYB3wFYrL01pR9oP6P9TaA+XdQoA0CCzBvYVAyWkl+pMZuYUYSs9EjpZms/b8nkzJlc53lt2ejK9Jw0yl/gMKZXMeBGgZSgAAAABJRU5ErkJggg=="> Test režim </span>
+	<p style="font-size: 17px;">
+	Ako je ova opcija uključena, fakture neće biti odobrene/prihvaćene na serveru. Ipak, fakture sa statusom "Nova" će dobiti status "Pregledano".
+	</p>
+</div>
+
+<div class="single_opt">
+	<label class="switch">
+	  <input type="checkbox" id="opt_night_mode">
+	  <span class="slider"></span>
+	  
+	</label>
+	<span>
+	<img class="optIco" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAACXBIWXMAAAsTAAALEwEAmpwYAAADH0lEQVR4nO1XS2yMURT+W+ItSJR4i1TI6D/3TMeCIA2xwo4SQYSNBaIejbZzz9ytx0IkFsIKsRELCZFU29xz/pYFJdJ00QiiXRAhkkpIUR25M/dvp9V2Hv2nq57kzyzmnnO/853HPcdxJqSAUqH0ZLemeZ75dcZVVKJYoLcJkC6BpJdC8idA6gPkhED6CLVeybiAiMT1IYH8wVw80heJNa0oKI6w0mUC6fXApdQHkj1Arokg7xZINy0zrYUFIr1dgPQ9eZnkP4B0Laqal6efAaQm+3914YDEeR9I+msZaTMMDT1TWXlvEiD3JMEoDQUBEqnT6wXSzxT93BA93zBnuHPROl7khy+qWmcEDiR8tn4mIHVZIC8qlJ420llXcXkSjKRfTiEEkOI2B76si/GyUYErXeYndUi1TwkWSK1X4icsSDqV6XxZbeNCP0yu0ksDBSOQT1hPu0pPPp6a6bxJYCHph9EJx3hbsGAkNVpPL2SrA0j1KSb5YqCJK5B+p7zUm7MHw+csmx2mUwcCJqr0Wj8ZS7MI0ZDyTvYakN6eQMAIpK22nL/mqguSb1hH2gOpKuOVBfMmV13zRAhJ3bYlXA2MGUD6lpd+XB/xyzws6WhAOcOJDaefTc/HRlq4+sJIZwKpJhdpS15GVKIYkO74TglJD0Rd45K8bAnJT6yRy3kZ8AFJRoHca211g6QrhvncwMT4uDXQmUt5DyeGXUB+NWgoQ+oQyHdFjI9l7ElRpef3VwVylTNmSRSZadAMYD5T/V9Mb8+oLpCl/2pHVMtiJ8BHWCC/tY/wZ6H03OwSWVKnBfQ838r6D4xk7GclzoezVnQVl/uvMUh6tKa6ZfZYgJiQD1QY387dgKS9aXFuA0mrc7VhRlFAup6WKzpvpgXyTj+hzWhpWn1YPV2QSc9sl0J6B0HSu7RqejjmkIPyQuklalcWUx1VIGmHK8l1VfOq5Dwc1/vNOpPcLgfY6EmtMYkiJ7C1Ns4HAOn9aBvloM8wiXxLKL0yGBDDrblIG80kaNjy1xnbl3pNFQpJ903zND3LGW8JKT1rpL1qQpwA5B+ae1Eq2j9K8gAAAABJRU5ErkJggg=="> Noćni režim sajta</span>
+	<div id="nightAuto">
+		<div>
+		<label>
+		  <input type="checkbox" id="opt_night_mode_auto">
+		   - Automatski uskladi sa sistemom
+		</label>
+		</div>
+		<div>
+	</div>
+</div>
+</div> 
+
+</div> 
+
+
+<div class="footer_info">Verzija 1.0.0 | Developer: <a href="mailto:s@sn.rs" target="_blank">s@sn.rs</a>. Dodatak je nezvaničan i koristite ga na svoju odgovornost.</div>
+<script src="options.js"></script>
+
+</body>
+</html>
