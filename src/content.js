@@ -103,7 +103,7 @@ function waitForElm(selector) {
     });
 }
 
-function notif(rezultat, isTestMod){
+function notif(rezultat, isTestMod, errMsg = false){
 	
 	if($("#popup").length) { $("#popup").remove(); }
 	
@@ -112,40 +112,49 @@ function notif(rezultat, isTestMod){
 		testMsg = "Rezultati testa";
 	}
 	
-	var popup = $('<div id="popup"><span id="minimize-btn">'+testMsg+'</span><table id="resultTable"><thead><tr><th>Faktura</th><th>Prethodni status</th><th>Novi status</th></tr></thead><tbody></tbody></table></div>');
+	var popupBody = '<table id="resultTable"><thead><tr><th>Faktura</th><th>Prethodni status</th><th>Novi status</th></tr></thead><tbody></tbody></table>';
+	
+	if( errMsg && errMsg != "" ){
+		popupBody = '<p style="margin: 10px;">Greška: '+errMsg+'</p>';
+	}
+	
+	var popup = $('<div id="popup"><span id="minimize-btn">'+testMsg+'</span>'+popupBody+'</div>');
     $("body").append(popup);
 	
-	let tableBody = document.querySelector('#resultTable tbody');
-	var prevedi = {
-		"seen":"Pregledano", 
-		"approved":"Odobreno",
-		"new":"Nova",
-		"reminded":"Podsetnik poslat",
-		"renotified":"Ponovo obavešteni",
-		"storno":"Stornirano",
-		"rejected":"Odbijeno"
-	};
+	if(rezultat && !errMsg){
+		let tableBody = document.querySelector('#resultTable tbody');
+		var prevedi = {
+			"seen":"Pregledano", 
+			"approved":"Odobreno",
+			"new":"Nova",
+			"reminded":"Podsetnik poslat",
+			"renotified":"Ponovo obavešteni",
+			"storno":"Stornirano",
+			"rejected":"Odbijeno"
+		};
+		
+		rezultat.forEach(single => {
+			let row = document.createElement('tr');
+			let fakturaCell = document.createElement('td');
+			let oldstatusCell = document.createElement('td');
+			let newstatusCell = document.createElement('td');
+			
+			let brFakture = single.faktura;
+			let oldStatus = single.old_status;
+			let newStatus = single.new_status;
+			
+			fakturaCell.textContent = brFakture;
+			oldstatusCell.textContent = prevedi[oldStatus.toLowerCase()];
+			newstatusCell.textContent = prevedi[newStatus.toLowerCase()];
+
+			row.appendChild(fakturaCell);
+			row.appendChild(oldstatusCell);
+			row.appendChild(newstatusCell);
+
+			tableBody.appendChild(row);
+		});
+	}
 	
-	rezultat.forEach(single => {
-		let row = document.createElement('tr');
-		let fakturaCell = document.createElement('td');
-		let oldstatusCell = document.createElement('td');
-		let newstatusCell = document.createElement('td');
-		
-		let brFakture = single.faktura;
-		let oldStatus = single.old_status;
-		let newStatus = single.new_status;
-		
-		fakturaCell.textContent = brFakture;
-		oldstatusCell.textContent = prevedi[oldStatus.toLowerCase()];
-		newstatusCell.textContent = prevedi[newStatus.toLowerCase()];
-
-		row.appendChild(fakturaCell);
-		row.appendChild(oldstatusCell);
-		row.appendChild(newstatusCell);
-
-		tableBody.appendChild(row);
-	});
 
     popup.show();
 	
@@ -155,7 +164,7 @@ function notif(rezultat, isTestMod){
 	const popupTimeout = setTimeout(function() {
         popup.addClass("minimized");
 		popup.animate({bottom: -popupHeight}, 500);
-    }, 2000);
+    }, 3000);
 	
 	// Spusti/prikaži na klik
 	popup.on("click", "#minimize-btn", function() {
@@ -203,7 +212,7 @@ function callapi(isReminder, isTestMod){
 	
 	// Prođi kroz sve selektovane redove
 	selected.each(function(i, obj) {
-		
+
 		// Proveri da li je kolona "Status" omogućena pa ako jeste uzmi vrednost
 		var status = false;
 		if( $('div[class*="statusContainer"]').length ) {
@@ -240,6 +249,7 @@ function callapi(isReminder, isTestMod){
 		promises.push(promise);
 		
 		promise.done(function(response, textStatus, xhr) {
+			
 			if( textStatus == "nocontent" || xhr.status != 200 || !response ) {
 				return;
 			}
@@ -297,7 +307,16 @@ function callapi(isReminder, isTestMod){
 		  });
 		  
 		  promise.fail(function(xhr, status, error) {
-			console.error('Error in API call');
+			  
+			  var errMsg = error;
+			  if(xhr.status == 401){
+				  errMsg = "ID kompanije nije ispravan. Odjavite se i prijavite pa pokušajte ponovo.";
+			  }
+			  
+			  if( $("#popup").length == 0 ){
+				  notif(false, false, errMsg);
+			  }
+			  
 		  });
 		
 
@@ -305,14 +324,19 @@ function callapi(isReminder, isTestMod){
 	
 	$.when.apply($, promises).then(function() {
 		
-	  setTimeout(() => { // Nekada server eFaktura ne ažurira status fakture odmah pa je potrebno osvežiti tabelu posle sekund da bi se videle promene
-		  _this.prop("disabled",false); // Ponovo omogući taster
-		  $(".ReactTable .-loading").css({"z-index":"","opacity":""}); // Skloni loading
+		setTimeout(() => { // Nekada server eFaktura ne ažurira status fakture odmah pa je potrebno osvežiti tabelu posle sekund da bi se videle promene
 			$(".src-components-DataTableButtonBar-__styles-module___applyFilterButton #btnApply").trigger( "click" ); // Osveži tabelu
 			notif(rezultat, isTestMod);
-	  }, 1100);
+		}, 1100);
 	  
-	});
+	}).always(function() {
+		
+		setTimeout(() => {
+			_this.prop("disabled",false); // Ponovo omogući taster
+			$(".ReactTable .-loading").css({"z-index":"","opacity":""}); // Skloni loading
+		}, 1100);
+
+    });
 }
 
 // Main fn
