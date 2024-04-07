@@ -1,3 +1,6 @@
+Verzija 1.0.1: 07.04.2023.
+- Bolje hendlovanje grešaka
+
 Verzija 1: 05.04.2023.
 - Prva verzija dodatka
 - Dostupne opcije: masovno odobravanje faktura, noćni režim, test režim
