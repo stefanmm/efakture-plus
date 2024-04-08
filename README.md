@@ -15,6 +15,10 @@ Ako je ova opcija uključena, sajt eFakture će biti prijatniji za korišćenje 
 ### #4 Potvrda o akciji
 Budući da nakon odobrenja fakture njen status ne može biti vraćen, podrazumevano je uključena dodatna mera zaštite od slučajnog klika. Dok je ova opcija aktivna, kada korisnik klikne "Odobri sve označene fakture" pojaviće se dodatna poruka gde korisnik mora da potvrdi svoj izbor. Ako korisnik ne želi da se pojavljuje dodatna poruka za potvrdu akcije, može je isključiti pomoću ove opcije.
 
+## Instaliraj
+- [Chromium Browser-i (Chrome, Edge, Brave...)](https://chromewebstore.google.com/detail/efakture-plus/egcpfbajfklgmfgagjendmplnhbpfeeh)
+- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/efakture-plus/)
+
 # Slike
 ![Opcije dodatka](https://github.com/stefanmm/efakture-plus/blob/main/slike/4.png?raw=true)
 ![Opcije dodatka](https://github.com/stefanmm/efakture-plus/blob/main/slike/1.png?raw=true)

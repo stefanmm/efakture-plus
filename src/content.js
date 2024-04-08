@@ -313,9 +313,7 @@ function callapi(isReminder, isTestMod){
 				  errMsg = "ID kompanije nije ispravan. Odjavite se i prijavite pa pokušajte ponovo.";
 			  }
 			  
-			  if( $("#popup").length == 0 ){
-				  notif(false, false, errMsg);
-			  }
+			  notif(false, false, errMsg);
 			  
 		  });
 		
