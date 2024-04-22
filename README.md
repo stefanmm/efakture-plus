@@ -17,7 +17,7 @@ Budući da nakon odobrenja fakture njen status ne može biti vraćen, podrazumev
 
 ## Instaliraj
 - [Chromium Browser-i (Chrome, Edge, Brave...)](https://chromewebstore.google.com/detail/efakture-plus/egcpfbajfklgmfgagjendmplnhbpfeeh)
-- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/efakture-plus/)
+- [Firefox](https://www.saznajnovo.com/addons/efaktureplus/efaktureplus.xpi)
 
 # Slike
 ![Opcije dodatka](https://github.com/stefanmm/efakture-plus/blob/main/slike/4.png?raw=true)

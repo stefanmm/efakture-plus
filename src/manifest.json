@@ -7,8 +7,9 @@
 	
 	"browser_specific_settings": {
 		"gecko": {
-			"id": "s@sn.rs",
-			"strict_min_version": "109.0"
+			"id": "efaktureplus@sn.rs",
+			"strict_min_version": "109.0",
+			"update_url": "https://www.saznajnovo.com/addons/efaktureplus/updates.json"
 		}
 	},
 	
